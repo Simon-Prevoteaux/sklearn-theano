@@ -1,7 +1,6 @@
 from skimage.data import coffee, camera
 
 from sklearn_theano.feature_extraction.caffe.vgg import VGGClassifier
-from sklearn_theano.feature_extraction.caffe.balanced_vgg import balancedVGGClassifier
 
 
 import numpy as np
@@ -24,18 +23,8 @@ def test_vgg_classifier():
     print VGG.predict(co)
     print VGG.predict(ca)
 
-def test_balanced_vgg_classifier():
-    """smoke test for vgg classifier"""
-    print 'testing the balanced vgg classifier'
-    if os.environ.get('CI', None) is not None:
-        raise SkipTest("Skipping heavy data loading on CI")
 
-    VGG = balancedVGGClassifier()
-
-    print VGG.predict(co)
-    print VGG.predict(ca)
 
 
 if __name__=="__main__":
     test_vgg_classifier()
-    #test_balanced_vgg_classifier()  #output doesn't seem to match the good predictions
