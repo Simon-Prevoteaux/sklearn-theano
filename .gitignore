@@ -1,3 +1,6 @@
 *.pyc
 *.py~
 *~
+/build/*
+/dist/*
+/sklearn_theano.egg-info/
