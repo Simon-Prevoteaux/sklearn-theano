@@ -12,19 +12,26 @@ ca = camera().astype(np.float32)[:, :, np.newaxis] * np.ones((1, 1, 3),
 
 def test_googlenet_transformer():
     """smoke test for googlenet transformer"""
+    print 'testing the googlenet transformer'
     if os.environ.get('CI', None) is not None:
         raise SkipTest("Skipping heavy data loading on CI")
     t = GoogLeNetTransformer()
 
+
     t.transform(co)
     t.transform(ca)
 
-
 def test_googlenet_classifier():
     """smoke test for googlenet classifier"""
+    print 'testing the googlenet classifier'
     if os.environ.get('CI', None) is not None:
         raise SkipTest("Skipping heavy data loading on CI")
     c = GoogLeNetClassifier()
 
     c.predict(co)
     c.predict(ca)
+
+
+if __name__=="__main__":
+    test_googlenet_transformer()
+    test_googlenet_classifier()

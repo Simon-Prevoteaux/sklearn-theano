@@ -6,8 +6,12 @@
 from sklearn.externals import joblib
 from ...datasets import get_dataset_dir, download
 from .caffemodel import _parse_caffe_model, parse_caffe_model
+from ...utils import check_tensor, get_minibatch_indices
+
+
 import os
 import theano
+import numpy as np
 
 BALANCED_VGG_PATH = get_dataset_dir("caffe/balanced_vgg")
 
@@ -42,8 +46,8 @@ def fetch_balanced_vgg_protobuffer_file(caffemodel_file=None):
     url = "https://bethgelab.org/media/uploads/deeptextures/"
     url += "vgg_normalised.caffemodel"
     # Need to bypass cert for bethge lab download
-    download(url, caffemodel_file, progress_update_percentage=1,
-             bypass_certificate_check=True)
+    download(url, caffemodel_file, progress_update_percentage=1,bypass_certificate_check=True)
+
     return caffemodel_file
 
 
