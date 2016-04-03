@@ -18,12 +18,8 @@ def test_googlenet_transformer():
     t = GoogLeNetTransformer()
 
 
-    temp=t.transform(co)
-    print temp
-    print temp.shape
-    tempb=t.transform(ca)
-    print tempb
-    print tempb.shape
+    t.transform(co)
+    t.transform(ca)
 
 def test_googlenet_classifier():
     """smoke test for googlenet classifier"""
@@ -32,9 +28,8 @@ def test_googlenet_classifier():
         raise SkipTest("Skipping heavy data loading on CI")
     c = GoogLeNetClassifier()
 
-    print c.predict(co)
-
-    print c.predict(ca)
+    c.predict(co)
+    c.predict(ca)
 
 
 if __name__=="__main__":

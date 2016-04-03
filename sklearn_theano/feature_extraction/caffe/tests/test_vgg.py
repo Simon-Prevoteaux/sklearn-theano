@@ -1,6 +1,6 @@
 from skimage.data import coffee, camera
 
-from sklearn_theano.feature_extraction.caffe.vgg import VGGClassifier
+from sklearn_theano.feature_extraction import (VGGClassifier)
 
 
 import numpy as np

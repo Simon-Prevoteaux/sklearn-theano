@@ -8,7 +8,6 @@ from ...datasets import get_dataset_dir, download
 from .caffemodel import _parse_caffe_model, parse_caffe_model
 from ...utils import check_tensor, get_minibatch_indices
 
-#if the class label are the same than the googlenet one
 from .googlenet_class_labels import get_googlenet_class_label
 from .googlenet_layer_names import get_googlenet_layer_names
 
