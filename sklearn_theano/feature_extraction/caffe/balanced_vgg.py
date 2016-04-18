@@ -46,7 +46,7 @@ def fetch_balanced_vgg_protobuffer_file(caffemodel_file=None):
     url = "https://bethgelab.org/media/uploads/deeptextures/"
     url += "vgg_normalised.caffemodel"
     # Need to bypass cert for bethge lab download
-    download(url, caffemodel_file, progress_update_percentage=1,bypass_certificate_check=True
+    download(url, caffemodel_file, progress_update_percentage=1,bypass_certificate_check=True)
 
     return caffemodel_file
 
