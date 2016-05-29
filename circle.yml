@@ -18,10 +18,7 @@ dependencies:
   # The pipefail is requested to propagate exit code
   override:
     - python setup.py install --user
-test:
-  # Grep error on the documentation
-  override:
-    - cat ~/log.txt && if grep -q "Traceback (most recent call last):" ~/log.txt; then false; else true; fi
+
 general:
   # Open the doc to the API
   artifacts:
