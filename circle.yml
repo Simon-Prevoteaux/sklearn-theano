@@ -4,6 +4,7 @@ machine:
     PYTHONPATH: "/usr/lib/python2.7/dist-packages:/home/ubuntu/.local/lib/python2.7/site-packages/"
 dependencies:
   cache_directories:
+<<<<<<< HEAD
     # - "~/sklearn_theano_data"
     # - "~/sklearn-theano.github.io"
     - "~/download"
