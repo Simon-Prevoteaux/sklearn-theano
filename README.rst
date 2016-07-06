@@ -37,7 +37,7 @@ with any problems found!
 
 License
 =======
-The License for sklearn-theano is 3-clause BSD. See the `LICENSE` file in the 
+The License for sklearn-theano is 3-clause BSD. See the `LICENSE` file in the
 top level of the repository https://github.com/sklearn-theano/sklearn-theano/blob/master/LICENSE
 
 This project provides downloaders for models that are distributed under their own terms, namely:
