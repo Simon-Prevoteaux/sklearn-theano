@@ -4,13 +4,11 @@ machine:
     PYTHONPATH: "/usr/lib/python2.7/dist-packages:/home/ubuntu/.local/lib/python2.7/site-packages/"
 dependencies:
   cache_directories:
-<<<<<<< HEAD
     # - "~/sklearn_theano_data"
     # - "~/sklearn-theano.github.io"
     - "~/download"
   override:
     - ./build_tools/circle/build_doc.sh
->>>>>>> upstream/master
 test:
   # Grep error on the documentation
   override:
