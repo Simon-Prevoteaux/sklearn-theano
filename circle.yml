@@ -4,21 +4,12 @@ machine:
     PYTHONPATH: "/usr/lib/python2.7/dist-packages:/home/ubuntu/.local/lib/python2.7/site-packages/"
 dependencies:
   cache_directories:
-    - "~/sklearn_theano_data"
-  # Various dependencies
-  pre:
-    - sudo apt-get update
-    - sudo apt-get install libatlas-dev libatlas3gf-base
-    - sudo apt-get install build-essential python-dev python-setuptools
-    - sudo apt-get install python-numpy python-scipy python-dev python-matplotlib
-    - sudo apt-get install python-nose python-coverage python-sklearn
-    - sudo apt-get install python-sphinx python-pip
-    - sudo pip install theano
-  # The --user is needed to let sphinx see the source and the binaries
-  # The pipefail is requested to propagate exit code
+    # - "~/sklearn_theano_data"
+    # - "~/sklearn-theano.github.io"
+    - "~/download"
   override:
-    - python setup.py install --user
-    - set -o pipefail && cd doc && make html 2>&1 | tee ~/log.txt
+    - ./build_tools/circle/build_doc.sh
+>>>>>>> upstream/master
 test:
   # Grep error on the documentation
   override:
@@ -28,7 +19,3 @@ general:
   artifacts:
     - "doc/_build/html"
     - "~/log.txt"
-  # Restrict the build to the branch master only
-  #branches:
-  #  only:
-  #     - master
